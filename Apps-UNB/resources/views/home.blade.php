@@ -82,11 +82,11 @@
                                             <p class="fw-normal mb-1">2021-2022</p>
                                         </td>
                                         <td>
-                                        @can('admin')
+                                        
                                             <button type="button" class="btn btn-info btn-sm btn-rounded">
                                             Voir
                                             </button>
-                                        @endcan
+                                        
                                         </td>
                                         </tr>
                                     </tbody>
