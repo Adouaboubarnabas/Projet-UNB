@@ -33,3 +33,4 @@ Route::middleware('auth', 'role:admin')->group(function () {
         return 'Bonjour admin';
     });
 });
+

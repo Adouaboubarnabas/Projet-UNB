@@ -17,7 +17,79 @@
                             
                             <button type="button" class="btn btn-success">Gestion sécretaire</button>
                             </div>
+<<<<<<< HEAD
                            
+=======
+                            
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #FFC300;">
+                                        <h5 class="modal-title"  style="color:#050705  ;" id="exampleModalLabel">Enregister un étudiant</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="inputName" class="form-label">Nom(s)</label>
+                                                <input required type="text" name="nom" class="form-control" id="inputName">
+                                            </div>
+                                             <div class="col-6">
+                                                <label for="inputName" class="form-label">Prénom</label>
+                                                <input required type="text" name="nom" class="form-control" id="inputName">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-6">
+                                            <label for="inputName" class="form-label">Cycle</label>
+                                             <select class="form-select">
+                                               
+                                               <option value="">Licence</option>
+                                             </select>
+                                            </div>
+                                            <div class="col-6">
+                                            <label for="inputName" class="form-label">Niveau d'etude</label>
+                                             <select class="form-select">
+                                               <option value="">Licence 1</option>
+                                               <option value="">Licence 2</option>
+                                               <option value="">Licence 3</option>
+                                             </select>
+                                            </div>
+                                        </div>
+                                            <div class="row">
+                                            <div class="col-6">
+                                                <label for="inputName" class="form-label">Anneé academique</label>
+                                                <input required type="text" name="nom" class="form-control" id="inputName">
+                                            </div>
+                                             <div class="col-6">
+                                                <label for="inputName" class="form-label">Matricule</label>
+                                                <input required type="text" name="nom" class="form-control" id="inputName">           
+                                        </div>
+                                         </div>
+                                            <div class="row">
+                                            <div class="col-6">
+                                                <label for="inputName" class="form-label">Email</label>
+                                                <input required type="text" name="nom" class="form-control" id="inputName">
+                                            </div>
+                                             <div class="col-6">
+                                                <label for="inputName" class="form-label">Photo</label>
+                                                <input required type="file" name="nom" class="form-control" id="inputName">           
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                                        <button type="button" class="btn btn-primary">Enregistrer</button>
+                                    </div>
+                                    </form>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+>>>>>>> 02ff922f60b4b99faa8b332a45baf8a9c39bcf0c
                         <div class="card mb-5">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
