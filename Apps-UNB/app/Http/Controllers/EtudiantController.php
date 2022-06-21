@@ -2,19 +2,13 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use App\Models\Etudiant;
-=======
->>>>>>> 47649f2e1b01ac86a6d090d54e897d740c5c6ba2
 use Illuminate\Http\Request;
 
 class EtudiantController extends Controller
 {
-<<<<<<< HEAD
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -50,9 +44,8 @@ class EtudiantController extends Controller
             'photo' => 'required | max:255',
         ]);
         Etudiant::create($storeData);
+
+
         return redirect()->route('etudiant.index')->with('success', 'Etudiant ajouté avec succès');
     }
-=======
-    //
->>>>>>> 47649f2e1b01ac86a6d090d54e897d740c5c6ba2
-}
+};
