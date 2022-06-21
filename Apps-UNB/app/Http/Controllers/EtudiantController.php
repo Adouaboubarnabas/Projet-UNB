@@ -22,7 +22,8 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        return view('etudiant.create');
+        return view('home');
+        
     }
 
     /**
@@ -41,11 +42,9 @@ class EtudiantController extends Controller
             'cycle' => 'required | max:255',
             'niveau_etude' => 'required | max:255',
             'annee_academique' => 'required | max:255',
-            'photo' => 'required | max:255',
+            'photo' => 'required',
         ]);
         Etudiant::create($storeData);
-
-
-        return redirect()->route('etudiant.index')->with('success', 'Etudiant ajouté avec succès');
+        return redirect()->route('bb')->with('success', 'Etudiant ajouté avec succès');
     }
 };

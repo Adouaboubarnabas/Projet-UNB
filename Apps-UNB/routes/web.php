@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Livewire\Etudiant;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EtudiantController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +25,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/etudiant.create', [EtudiantController::class, 'create'])->name('etudiant.create');
+Route::get('/home.etudiant', [App\Http\Controllers\EtudiantController::class, 'index'])->name('etudiant');
 
 Route::middleware('auth', 'role:admin')->group(function () {
     Route::get('/private', function() {

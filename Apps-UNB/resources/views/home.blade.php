@@ -8,81 +8,16 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-0">
+                    @include('Etudiant.create')
+
                         <div class="card mb-2">
                             <div class="card-body">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Inscrire un étudiant</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_add">Inscrire un étudiant</button>
                             <button type="button" class="btn btn-success">Listes des étudiants</button>
                             
                             <button type="button" class="btn btn-success">Gestion sécretaire</button>
                             </div>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                    <div class="modal-header" style="background-color: #FFC300;">
-                                        <h5 class="modal-title"  style="color:#050705  ;" id="exampleModalLabel">Enregister un étudiant</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <form>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <label for="inputName" class="form-label">Nom(s)</label>
-                                                <input required type="text" name="nom" class="form-control" id="inputName">
-                                            </div>
-                                             <div class="col-6">
-                                                <label for="inputName" class="form-label">Prénom</label>
-                                                <input required type="text" name="nom" class="form-control" id="inputName">
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-6">
-                                            <label for="inputName" class="form-label">Cycle</label>
-                                             <select class="form-select">
-                                               
-                                               <option value="">Licence</option>
-                                             </select>
-                                            </div>
-                                            <div class="col-6">
-                                            <label for="inputName" class="form-label">Niveau d'etude</label>
-                                             <select class="form-select">
-                                               <option value="">Licence 1</option>
-                                               <option value="">Licence 2</option>
-                                               <option value="">Licence 3</option>
-                                             </select>
-                                            </div>
-                                        </div>
-                                            <div class="row">
-                                            <div class="col-6">
-                                                <label for="inputName" class="form-label">Anneé academique</label>
-                                                <input required type="text" name="nom" class="form-control" id="inputName">
-                                            </div>
-                                             <div class="col-6">
-                                                <label for="inputName" class="form-label">Matricule</label>
-                                                <input required type="text" name="nom" class="form-control" id="inputName">           
-                                        </div>
-                                         </div>
-                                            <div class="row">
-                                            <div class="col-6">
-                                                <label for="inputName" class="form-label">Email</label>
-                                                <input required type="text" name="nom" class="form-control" id="inputName">
-                                            </div>
-                                             <div class="col-6">
-                                                <label for="inputName" class="form-label">Photo</label>
-                                                <input required type="file" name="nom" class="form-control" id="inputName">           
-                                        </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                                        <button type="button" class="btn btn-primary">Enregistrer</button>
-                                    </div>
-                                    </form>
-                                    </div>
-                                </div>
-                                </div>
-                        </div>
+                           
                         <div class="card mb-5">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -132,13 +67,13 @@
                                         </td>
                                         <td style="text-align :center;">
                                         {{-- @can('admin') --}}
-                                            <button type="button" class="btn btn-info btn-sm btn-rounded serviceeditbtn">
+                                            <button type="button" class="btn btn-info btn-sm btn-rounded " data-toggle="modal" data-target="#modal_edit">
                                             Modifier
                                             </button>
                                              <button type="button" class="btn btn-danger btn-sm btn-rounded">
                                             Supprimer
                                             </button>
-                                             <button type="button" class="btn btn-info btn-sm btn-rounded">
+                                             <button type="button" class="btn btn-info btn-sm btn-rounded" data-toggle="modal" data-target="#modal_carte">
                                             Carte
                                             </button>
                                             
@@ -146,6 +81,8 @@
                                         </td>
                                         </tr>
                                     </tbody>
+                                    @include('Etudiant.edit')
+                                    @include('Etudiant.carte')
                                     </table>
                             </div>
                         </div>
