@@ -24,13 +24,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home/etudiant.create', [EtudiantController::class, 'create'])->name('etudiant.create');
-Route::get('/home.etudiant', [App\Http\Controllers\EtudiantController::class, 'index'])->name('etudiant');
-
-Route::middleware('auth', 'role:admin')->group(function () {
-    Route::get('/private', function() {
-        return 'Bonjour admin';
-    });
-});
+Route::get('/home1', [EtudiantController::class, 'index'])->name('home');
+Route::post('/etudiant', [EtudiantController::class, 'store'])->name('etudiant.store');
 

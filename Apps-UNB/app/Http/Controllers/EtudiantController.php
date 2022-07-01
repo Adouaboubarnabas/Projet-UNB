@@ -13,8 +13,8 @@ class EtudiantController extends Controller
     public function index()
     {
         $etudiants = Etudiant::all();
-        return view('etudiant.index', compact('etudiants'));
-    } 
+        return view('home', compact('etudiants'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -22,7 +22,7 @@ class EtudiantController extends Controller
      */
     public function create()
     {
-        return view('home');
+        return view("etudiant.create");
         
     }
 
@@ -44,7 +44,18 @@ class EtudiantController extends Controller
             'annee_academique' => 'required | max:255',
             'photo' => 'required',
         ]);
-        Etudiant::create($storeData);
-        return redirect()->route('bb')->with('success', 'Etudiant ajouté avec succès');
+        $img_path = $request->file('photo')->store('images');
+        Etudiant::create([
+            'nom' => $request->nom,
+            'prenom' =>$request->prenom, 
+            'email' =>$request->email, 
+            'matricule' =>$request->matricule, 
+            'cycle' =>$request->cycle, 
+            'niveau_etude' =>$request->niveau_etude, 
+            'annee_academique' =>$request->annee_academique, 
+            'photo' => $img_path,
+        ]);
+        // return redirect()->route('home');
+        return back()->with('success', 'Etudiant ajouté avec succès');
     }
 };

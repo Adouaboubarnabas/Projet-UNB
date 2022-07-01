@@ -9,64 +9,74 @@
         </button>
     </div>
     <div class="modal-body">
-        <form method="POST" action="{{route('etudiant')}}">
+        @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        <form  action="{{route('etudiant.store')}}" method="post" enctype="multipart/form-data">
             @csrf
                 <div class="row">
                     <div class="col-6">
                             <label for="inputName" class="form-label">Nom(s)</label>
                             <input required type="text" name="nom" class="form-control" id="inputName">
                     </div>
-                        <div class="col-6">
-                            <label for="inputName" class="form-label">Prénom</label>
-                            <input required type="text" name="prenom" class="form-control" id="prenom">
+                    <div class="col-6">
+                        <label for="inputName" class="form-label">Prénom</label>
+                        <input required type="text" name="prenom" class="form-control" id="prenom">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="inputName" class="form-label">Email</label>
+                        <input required type="text" name="email" class="form-control" id="prenom">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputName" class="form-label">Matricule</label>
+                        <input required type="text" name="matricule" class="form-control" id="prenom">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <label for="inputName" class="form-label">Cycle</label>
                         <select class="form-select" name="cycle">
-                                               
-                        <option value="" name="cycle">Licence</option>
-                         </select>
+                            <option value="Licence" >Licence</option>
+                        </select>
                     </div>
-                            <div class="col-6">
-                                <label for="inputName" class="form-label">Niveau d'etude</label>
-                                    <select class="form-select" name="niveau_etude">
-                                        <option value="" name="niveau_etude" >Licence 1</option>
-                                        <option value="" name="niveau_etude" >Licence 2</option>
-                                        <option value=""name="niveau_etude">Licence 3</option>
-                                    </select>
-                            </div>
+                    <div class="col-6">
+                        <label for="inputName" class="form-label">Niveau d'etude</label>
+                        <select class="form-select" name="niveau_etude">
+                            <option value="Licence1" >Licence 1</option>
+                            <option value="Licence2" >Licence 2</option>
+                            <option value="Licence3">Licence 3</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="row">
-                            <div class="col-6">
-                                <label for="inputName" class="form-label">Anneé academique</label>
-                                <input required type="text" name="anne_academique" class="form-control" id="anne_academique">
-                            </div>
-                            <div class="col-6">
-                                <label for="inputName" class="form-label">Matricule</label>
-                                <input required type="text" name="matricule" class="form-control" id="matricule">           
-                            </div>
-                            </div>
-                <div class="row">
-                            <div class="col-6">
-                                <label for="inputName" class="form-label">Email</label>
-                                <input required type="text" name="email" class="form-control" id="email">
-                            </div>
-                            <div class="col-6">
-                                <label for="inputName" class="form-label">Photo</label>
-                                <input required type="file" name="photo" class="form-control" id="photo">           
-                            </div>
+                    <div class="col-6">
+                        <label for="inputName" class="form-label">Anneé academique</label>
+                        <select class="form-select" name="annee_academique">
+                            <option value="2020-2021">2020-2021</option>
+                            <option value="2021-2022">2021-2022</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="inputName" class="form-label">Photo</label>
+                        <input required type="file" name="photo" class="form-control" id="photo">           
+                    </div>
                 <div><br>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-                        <a type="button" href="{{('etudiant')}}" class="btn btn-primary">Enregistrer</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                <input type="submit" class="btn btn-primary" value="Valider l'inscription">
                     </div>
-                    </form>
                     </div>
-                    <div class="modal-footer">
-                    </div>
-              </form>
+                    
+            </form>
             </div>
         </div>
     </div>
+    
 </div>
